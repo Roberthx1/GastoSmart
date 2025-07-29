@@ -6,19 +6,16 @@ import pandas as pd
 ARCHIVO_USUARIOS = "usuarios.json"
 ARCHIVO_DATOS = "registros.json"
 
-# Cargar usuarios
 def cargar_usuarios():
     if os.path.exists(ARCHIVO_USUARIOS):
         with open(ARCHIVO_USUARIOS, 'r') as file:
             return json.load(file)
     return {}
 
-# Guardar usuarios
 def guardar_usuarios(usuarios):
     with open(ARCHIVO_USUARIOS, 'w') as file:
         json.dump(usuarios, file, indent=4)
 
-# Cargar datos (transacciones)
 def cargar_datos():
     if os.path.exists(ARCHIVO_DATOS):
         with open(ARCHIVO_DATOS, 'r') as file:
@@ -27,19 +24,16 @@ def cargar_datos():
                 return datos
     return {}
 
-# Guardar datos
 def guardar_datos(data):
     with open(ARCHIVO_DATOS, 'w') as file:
         json.dump(data, file, indent=4)
 
-# Variables globales
 usuarios = cargar_usuarios()
 datos = cargar_datos()
 usuario_actual = None
 presupuestos = {}
 metas_ahorro = {}
 
-# --- AUTENTICACIÓN ---
 def registrar_usuario():
     print("\n--- Registro ---")
     usuario = input("Nombre de usuario: ").strip()
@@ -63,7 +57,6 @@ def iniciar_sesion():
         print("❌ Usuario o contraseña incorrectos.")
         return None
 
-# --- FUNCIONES PRINCIPALES ---
 def registrar_transaccion():
     global datos
     tipo = input("\n¿Es un Gasto o un Ingreso? (G/I): ").strip().upper()
@@ -156,7 +149,6 @@ def establecer_metas_ahorro():
     except ValueError:
         print("Monto inválido.")
 
-# --- MENÚ PRINCIPAL ---
 def mostrar_menu():
     while True:
         print(f"\n--- GastoSmart: Usuario {usuario_actual} ---")
@@ -187,7 +179,6 @@ def mostrar_menu():
         else:
             print("Opción inválida.")
 
-# --- INICIO DEL PROGRAMA ---
 def inicio():
     global usuario_actual
     while True:
@@ -211,6 +202,5 @@ def inicio():
         else:
             print("Opción inválida.")
 
-# Ejecutar
 if __name__ == "__main__":
     inicio()
