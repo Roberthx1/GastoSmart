@@ -1,0 +1,10 @@
+{
+    "Robert": [
+        {
+            "tipo": "Gasto",
+            "monto": 200.0,
+            "categoria": "comida",
+            "fecha": "23/07/2025"
+        }
+    ]
+}
