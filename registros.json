@@ -1,10 +1,16 @@
 {
-    "Robert": [
+    "robertogamboa": [
+        {
+            "tipo": "Ingreso",
+            "monto": 1200.0,
+            "categoria": "Sueldo",
+            "fecha": "31/07/2025"
+        },
         {
             "tipo": "Gasto",
-            "monto": 200.0,
-            "categoria": "comida",
-            "fecha": "23/07/2025"
+            "monto": 100.0,
+            "categoria": "Comida",
+            "fecha": "31/07/2025"
         }
     ]
 }
